@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bounce : MonoBehaviour
+public class AIBounce : MonoBehaviour
 {
     [SerializeField]
     private GameObject border;
@@ -25,14 +25,14 @@ public class Bounce : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
-        
+
     {   //(rb.gameObject.transform.position.y - transform.position.y < 30)
-        
+
         float ydiff = rb.gameObject.transform.position.y - transform.position.y;
         float distNonVertical = Vector2.Distance(new Vector2(rb.gameObject.transform.position.x, rb.gameObject.transform.position.z), new Vector2(transform.position.x, transform.position.z));
         //print(rb.gameObject.transform.position.y - border.transform.position.y);
@@ -56,11 +56,11 @@ public class Bounce : MonoBehaviour
             float newPosY = moveVector.y;
             transform.position = new Vector3(moveVector.x, transform.position.y, moveVector.y);
             //print("from opp " + (step));
-      
+
 
         }
-        
-        
+
+
     }
 
     private void OnTriggerEnter(Collider other)

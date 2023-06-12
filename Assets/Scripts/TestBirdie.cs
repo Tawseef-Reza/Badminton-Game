@@ -27,6 +27,7 @@ public class TestBirdie : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        print(airborne);
         if (airborne)
         {
             float z = Vector3.Angle(Vector3.up, rb.velocity);
@@ -40,13 +41,20 @@ public class TestBirdie : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
-        print(collision.gameObject.name); 
+        //print(collision.gameObject.name); 
         if (collision.gameObject.name == "FIELD")
         {
             airborne = false;
         }
     }
-    
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.name == "FIELD")
+        {
+            airborne = true;
+        }
+    }
+
 }

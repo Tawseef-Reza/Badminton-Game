@@ -114,7 +114,7 @@ MonoBehaviour:
   _transform: {fileID: 802307237608903554}
   details: {fileID: 3775714194004506771}
   field: {fileID: 0}
-  isTouchingField: 0
+  airborne: 1
 --- !u!1 &514682354788730381
 GameObject:
   m_ObjectHideFlags: 0
